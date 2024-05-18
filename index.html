@@ -1,1 +1,25 @@
-https://satyamxuniverse.github.io/mpd/star-sports-1-hd/
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASH Video Player</title>
+    <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
+</head>
+<body>
+    <video id="videoPlayer" controls autoplay></video>
+
+    <script>
+        // URL of the MPD file
+        var mpdUrl = "https://satyamxuniverse.github.io/mpd/star-sports-1-hd/";
+
+        // Create a DASH video player
+        var videoPlayer = dashjs.MediaPlayer().create();
+
+        // Set the video element to be controlled by the player
+        videoPlayer.initialize(document.querySelector("#videoPlayer"), mpdUrl, true);
+    </script>
+</body>
+</html>
+
