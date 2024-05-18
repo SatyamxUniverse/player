@@ -1,25 +1,27 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DASH Video Player</title>
-    <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
+    <title>DASH Video Player with JW Player</title>
+    <!-- Include JW Player library -->
+    <script src="https://content.jwplatform.com/libraries/SAHhwvZq.js"></script>
 </head>
 <body>
-    <video id="videoPlayer" controls autoplay></video>
+    <!-- Video player container -->
+    <div id="player-container"></div>
 
     <script>
-        // URL of the MPD file
-        var mpdUrl = "https://satyamxuniverse.github.io/mpd/star-sports-1-hd/";
-
-        // Create a DASH video player
-        var videoPlayer = dashjs.MediaPlayer().create();
-
-        // Set the video element to be controlled by the player
-        videoPlayer.initialize(document.querySelector("#videoPlayer"), mpdUrl, true);
+        // Configuration for JW Player
+        var player = jwplayer("player-container").setup({
+            // Set up the DASH source
+            file: "https://satyamxuniverse.github.io/mpd/star-sports-1-hd/manifest.mpd",
+            // Set up other player options
+            controls: true,
+            autostart: true, // Autoplay the video
+            width: "100%", // Set player width
+            aspectratio: "16:9" // Set aspect ratio
+        });
     </script>
 </body>
 </html>
-
